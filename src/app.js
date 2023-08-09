@@ -59,7 +59,7 @@ function createCards(elem) {
   }
 }
 
-/* inversor de valores de cartas A, J, Q, K */
+/* Traté de que cambie el formato al mostrar pero aún no se puede implementar bien, lo dejo pendiente para preguntar*/
 
 function changeValue(valor) {
   switch (valor) {
@@ -75,7 +75,7 @@ function changeValue(valor) {
       return valor;
   }
 }
-/* DRAW button estructura*/
+/* DRAW button lógica para la*/
 
 btnDraw.addEventListener("click", e => {
   const cardDeck = document.querySelector("#cardDeck");
