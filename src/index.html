@@ -3,27 +3,30 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Hello Rigo with Vanilla.js</title>
-    <link
-      rel="stylesheet"
-      href="https://use.fontawesome.com/releases/v5.2.0/css/all.css"
-      integrity="sha384-hWVjflwFxL6sNzntih27bfxkr27PmbbK/iSvJ+a4+0owXq79v+lsFkW54bOGbiDQ"
-      crossorigin="anonymous"
-    />
-    <link rel="shortcut icon" href="./4geeks.ico" />
+    <title>Bubble Sort Cards</title>
+    <link rel="stylesheet" href="/src/style.css" />
   </head>
+
   <body>
-    <div class="container-fluid text-center">
-      <h1 class="mt-5">Hello Rigo!</h1>
-      <img src="./rigo-baby.jpg" />
-      <p class="alert alert-warning mt-4">
-        If this text is <b>not</b> centered and <b>yellow</b>, you probably have
-        an error
-      </p>
-      <div class="fixed-bottom p-4">
-        Made with ❤️ by
-        <a href="https://www.4geeksacademy.com">4Geeks Academy</a>
-      </div>
+    <!-- Sección de entrada -->
+    <div id="inputs">
+      <label for="original">Original: </label>
+      <!-- Campo de entrada de cantidad de cartas -->
+      <input id="amountOfCards" name="amountOfCards" type="text" />
+      <!-- Botones para crear y ordenar cartas -->
+      <button id="btnDraw" class="button">Draw</button>
+      <button id="btnSort" class="button">Sort</button>
     </div>
+
+    <!-- Área donde se muestran las cartas generadas segun cantidad qie ongreso el  usuario -->
+    <div id="cardDeck"></div>
+
+    <!-- Etiqueta para mostrar información sobre el proceso de ordenamiento -->
+    <label id="bubbleLabel" for="bubble">Bubble Log: </label>
+    <!-- Área donde se mostrarán las cartas ordenadas -->
+    <div id="sortDeck"></div>
+
+    <!-- Script para la lógica de JavaScript -->
+    <script src="/src/app.js"></script>
   </body>
 </html>
