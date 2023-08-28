@@ -1,9 +1,3 @@
-/* eslint-disable */
-import "bootstrap";
-import "./style.css";
-
-import "./assets/img/rigo-baby.jpg";
-import "./assets/img/4geeks.ico";
 let btnDraw = document.querySelector("#btnDraw");
 let btnSort = document.querySelector("#btnSort");
 
@@ -13,7 +7,7 @@ let orderCards = [];
 
 function createCards(elem) {
   let input = document.getElementById("amountOfCards");
-  let amountOfCards = parseInt(input.value); //valido entero para cantidad de cartas a generar
+  let amountOfCards = parseInt(input.value);
   orderCards = [];
 
   for (let i = 0; i < amountOfCards; i++) {
@@ -29,7 +23,8 @@ function createCards(elem) {
 
     let middleNumber = document.createElement("div");
     middleNumber.classList.add("middleNumber");
-    middleNumber.innerHTML = numeros[randomNumber];
+    let num = numeros[randomNumber];
+    middleNumber.innerHTML = changeValue(num);
 
     let bottonSuit = document.createElement("div");
     bottonSuit.classList.add("bottonSuit");
@@ -52,14 +47,12 @@ function createCards(elem) {
     elem.appendChild(card);
 
     let cardContent = {
-      number: parseInt(changeValue(middleNumber.innerHTML)),
+      number: num,
       html: card.innerHTML
     };
     orderCards.push(cardContent);
   }
 }
-
-/* Traté de que cambie el formato al mostrar pero aún no se puede implementar bien, lo dejo pendiente para preguntar*/
 
 function changeValue(valor) {
   switch (valor) {
@@ -72,10 +65,9 @@ function changeValue(valor) {
     case 13:
       return "K";
     default:
-      return valor;
+      return valor.toString();
   }
 }
-/* DRAW button lógica para la*/
 
 btnDraw.addEventListener("click", e => {
   const cardDeck = document.querySelector("#cardDeck");
